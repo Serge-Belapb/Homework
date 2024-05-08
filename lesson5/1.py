@@ -1,0 +1,31 @@
+<<<<<<< HEAD
+a = input('Введите данные 1:')
+b = input('Введите данные 2:')
+c = input('Введите данные 3:')
+a1 = a.split()
+b1 = b.split()
+c1 = c.split()
+a2 = int(a1[1])
+b2 = int(b1[1])
+c2 = int(c1[1])
+sp = [[a1[0], a2], [b1[0], b2], [c1[0], c2]]
+sl = dict(sp)
+x = input('Ведите имя товара: ')
+print(f'Цена {x} + 15% = {sl[x]*1.15}')
+print('Сумма:', a2 + b2 + c2)
+=======
+a = input('Введите данные 1:')
+b = input('Введите данные 2:')
+c = input('Введите данные 3:')
+a1 = a.split()
+b1 = b.split()
+c1 = c.split()
+a2 = int(a1[1])
+b2 = int(b1[1])
+c2 = int(c1[1])
+sp = [[a1[0], a2], [b1[0], b2], [c1[0], c2]]
+sl = dict(sp)
+x = input('Ведите имя товара: ')
+print(f'Цена {x} + 15% = {sl[x]*1.15}')
+print('Сумма:', a2 + b2 + c2)
+>>>>>>> d64038ef74ba144a6ff00af923ff1a20353ae745
