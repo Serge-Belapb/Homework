@@ -9,12 +9,6 @@
 a = int(input("Целое число1 :"))
 b = int(input("Целое число2 :"))
 
-# sp = list(range(a, b+1))
-# print(sp)
-# for i in sp:
-#     rez = sum(sp)
-# print(rez)
-
 
 def summab(d1, d2):
     sp = list(range(d1, d2+1))
