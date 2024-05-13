@@ -6,16 +6,21 @@
 
 '''
 
+a = int(input("Целое число1 :"))
+b = int(input("Целое число2 :"))
 
-n = 1
-
-
-def printn(text):
-    global n
-    for i in text:
-        print(n, text)
-        n += 1
-    return   
+# sp = list(range(a, b+1))
+# print(sp)
+# for i in sp:
+#     rez = sum(sp)
+# print(rez)
 
 
-print(printn(input("  :")))
+def summab(d1, d2):
+    sp = list(range(d1, d2+1))
+    for i in sp:
+        rez = sum(sp)
+    return rez  
+
+
+print(f"Сумма всех чисел от {a} до {b} :", summab(a,b))
