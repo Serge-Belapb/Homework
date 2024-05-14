@@ -8,6 +8,6 @@
 sl_temp = {"day1":18, "day2":22, "day3":7, "day4":11, "day5":14}
 
 d = dict(sorted(sl_temp.items(), key=lambda x:x[1]))
-print(d)
+print("По возрастанию:", d)
 d = dict(sorted(sl_temp.items(), key=lambda x:x[1], reverse=True))
-print(d)
+print("По убыванию", d)
