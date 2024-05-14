@@ -6,4 +6,9 @@
  
 '''
 
-spis = 
+spis = ["hello", True, 123]
+
+# def str_z(sp):
+#     for i in sp:
+        
+
