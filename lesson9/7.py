@@ -23,13 +23,3 @@ spis_pass = filter(lambda x : True if len(x['password']) < 5 else False, spis)
 print(list(spis_pass))
 
 
-
-
-
-
-
-
-
-# l = [[1, 2, 9, [2]], [1, 9, 4, [6]], [2, 9, 3, [6]]]
-# l3 = filter(lambda x:True if x[2]==9 else False, l)
-# print(list(l3))

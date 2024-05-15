@@ -9,9 +9,10 @@ n = 1
 
 def printn(text):
     global n
+    n += 1
     for i in text:
         print(n, text)
-        n += 1
+        printn(text)
     return   
 
 

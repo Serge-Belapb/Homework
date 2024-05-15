@@ -34,7 +34,6 @@
 '''
 
 list1 = [1, 2, 3, [4, [5, 6], 7], 8, 9]
-A = [[1, 2, 3], [4, [5, 6], 7], [8, 9]]
 some_list2=[1,[2,[[3],4]],5,[[[6,7]]],8,[[[[9,10]],11]],12]
 
 
@@ -43,12 +42,10 @@ def sp_prn(liist):
     for i in range(len(liist)):
         if liist[i] > 0:
             print(liist[i])
+        elif liist[i] == type():
+            
         else:
-            if len(liist[i]) > 1:
-                for j in liist[i]:
-                    print(liist[i][j])
-            # for j in n_liist:
-            #     print(n_liist[j])
+            sp_prn(liist[i])
             
 
 sp_prn(list1)
