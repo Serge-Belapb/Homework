@@ -10,7 +10,14 @@ slov = {"Belarus" : ["Minsk", "Grodno"],
 }
 
 gorod = input("Ввыдите город: ")
-print(type(gorod))
+for strany, goroda in slov.items():
+    if gorod in goroda:
+        print(f"Город {gorod} из страны {strany}")
+        break
+    else:
+        print(f"Ошибка. Страна для {gorod} не найдена ")
 
-otvet = filter(lambda x : True if x == gorod else False, slov)
-print(list(otvet))
+
+
+
+        
