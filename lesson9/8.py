@@ -6,13 +6,9 @@
  
 '''
 
-spis = ["hello python", True, 123]
+spis = ["hello python", True, 123, "123"]
 
-def str_z(sp):
-    for i in sp:
-        if 
-
-f = filter(str.isalpha,spis)
+f = filter(lambda x : type(x) is str, spis)
 print(list(f))
-s1 = "".join(f)
-print(s1)
+f = filter(lambda x : type(x) is bool, spis)
+print(list(f))
