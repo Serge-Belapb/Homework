@@ -34,27 +34,25 @@
 '''
 
 list1 = [1, 2, 3, [4, [5, 6], 7], 8, 9]
-some_list2=[1,[2,[[3],4]],5,[[[6,7]]],8,[[[[9,10]],11]],12]
+list2 = [1,[2,[[3],4]],5,[[[6,7]]],8,[[[[9,10]],11]],12]
 
 
 def sp_prn(liist):
-    n_liist = list()
-    for i in range(len(liist)):
-        if liist[i] > 0:
-            print(liist[i])
-        elif liist[i] == type():
-            
+    for i, v in enumerate(liist):
+        if isinstance(v, list):
+            for j, w in enumerate(liist[i]):
+                if isinstance(w, list):
+                    for k, q in enumerate(liist[i][j]):
+                        print("-"*4, q)
+                else:
+                    print("-"*2, w)
         else:
-            sp_prn(liist[i])
-            
+            print(v)
+
 
 sp_prn(list1)
 
-# for i in range(len(list1)):
-#     print(list1)
-#     for j in range(len(list1[i])):
-#         print(list[i][j], end = ' ')
-#     print()
+
 
 
 
