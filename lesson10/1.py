@@ -19,14 +19,12 @@
 
 
 def dict_from_args(*args: int, **kwargs: str):
-    print(args, kwargs)
     di ={}
     try:
         args_sum = sum(args)
         print("args_sum :", args_sum)
     except TypeError:
-        args_sum = "Все позиционные аргументы должны быть целыми"
-        print(args_sum)   
+        print("Все позиционные аргументы должны быть целыми")   
     try: 
         max_val = max(kwargs.values())
         fin_dict = list(len(v) for k, v in kwargs.items() if v == max_val)
