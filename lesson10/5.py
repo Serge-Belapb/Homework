@@ -18,9 +18,6 @@ def fiba(n):
 print(list(fiba(11)))  
 
 
-
-
-
 # n = int(input("Введите число: "))
 # a, b = 0, 1
 # while b <= n:
