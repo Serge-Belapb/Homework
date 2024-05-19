@@ -26,8 +26,6 @@ def dict_from_args(*args: int, **kwargs: str):
         print("Все позиционные аргументы должны быть целыми")   
     try: 
         max_val = max(kwargs.values())
-        # max_len = list(len(v) for k, v in kwargs.items() if v == max_val)
-        # print("kwargs_max_len :", max_len)
     except TypeError:
         kwargs_max_len = "Все аргументы - ключевые слова должны быть строками"
         print(kwargs_max_len)
