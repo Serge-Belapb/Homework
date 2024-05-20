@@ -15,7 +15,7 @@ def fiba(n):
         yield a
         a, b = b, a + b
 
-print(list(fiba(11)))  
+print(list(fiba(12)))  
 
 
 # n = int(input("Введите число: "))

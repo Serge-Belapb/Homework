@@ -18,7 +18,7 @@ print(c10()) -> 13
 """
 
 def out_function():
-    n = 10
+    n = 1
     def in_function():
         nonlocal n
         n +=1
