@@ -49,7 +49,7 @@ def onion(fun_to_dekor):
     def wrapper():
         print("----- лук ------")
         fun_to_dekor()
-        return wrapper
+    return wrapper
 
 def tomato(fun_to_dekor):
     def wrapper():
@@ -62,91 +62,26 @@ def salad(fun_to_dekor):
     def wrapper():
         print("~~~~ салат ~~~~~")
         fun_to_dekor()
-        return wrapper
+    return wrapper
 
 def cheese(fun_to_dekor):
     def wrapper():
         print("^^^^^ сыр ^^^^^^")
         fun_to_dekor()
-        return wrapper
+    return wrapper
 
- 
+def beef():
+    print("### говядина ###")
 
-def beef(food_beef = "### говядина ###"):
-    print(food_beef)
+def chicken():
+    print("|||| курица ||||")
 
-def chicken(food_chicken = "|||| курица ||||"):
-    print(food_chicken)
 
-@bread
-@tomato
-def beef(food_beef = "### говядина ###"):
-    print(food_beef)
+gamburger = bread(onion(tomato(beef)))
+gamburger()
 
-beef()
+chickenburger = bread(cheese(salad((chicken))))
+chickenburger()
 
 
 
-# gamburger = bread(onion(beef))
-# gamburger()
-
-
-
-# chickenburger = bread(cheese(chicken))
-# chickenburger()
-
-
-
-
-# def bread(fun_to_dekor):
-#     def wrapper_bread():
-#         print("</------------\\>")
-#         fun_to_dekor()
-#         print("<\\____________/>")
-#     return wrapper_bread 
-
-# def tomato(fun_to_dekor):
-#     def wrapper_tomato():
-#         print("*** помидоры ****")
-#         fun_to_dekor()
-#         return wrapper_tomato
-
-# def salad(fun_to_dekor):
-#     def wrapper():
-#         print("~~~~ салат ~~~~~")
-#         fun_to_dekor()
-#         return wrapper
- 
-# def cheese(fun_to_dekor):
-#     def wrapper():
-#         print("^^^^^ сыр ^^^^^^")
-#         fun_to_dekor()
-#         return wrapper
-    
-# def onion(fun_to_dekor):
-#     def wrapper():
-#         print("----- лук ------")
-#         fun_to_dekor()
-#         return wrapper
-
-# def beef():
-#     print("### говядина ###")
-    
-# def chicken():
-#     print("|||| курица ||||")
-
-
-# gamburger = bread(onion(tomato))
-# gamburger()
-
-
-# bread()
-# @bread
-# @onion 
-# @tomato
-# @beef
-# # @bread
-# def gamburger(func):
-#     return 
-
-# gamburger()
