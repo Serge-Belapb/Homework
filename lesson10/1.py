@@ -25,13 +25,14 @@ def dict_from_args(*args: int, **kwargs: str):
     except TypeError:
         print("Все позиционные аргументы должны быть целыми")   
     try: 
-        max_val = max(kwargs.values())
+        
+        max_val = max(list(kwargs.values()), key=len)
     except TypeError:
-        kwargs_max_len = "Все аргументы - ключевые слова должны быть строками"
-        print(kwargs_max_len)
+        print("Все аргументы - ключевые слова должны быть строками")
     di = {"args_sum" : args_sum, "kwargs_max_len" : len(max_val)}    
     return di
     
 
-print(dict_from_args(1, 1, 3, 4, q='worlds', w='Hello'))
+import json
+print(json.dumps(dict_from_args(1, 1, 3, 4, q='wooooooorlds', w='Helloss'), indent=4, sort_keys=True))
 
