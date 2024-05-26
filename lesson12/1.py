@@ -39,7 +39,7 @@ class Cow(Animal):
  
 
 
-myCat = Cat("Tom")
+myCat = Cat("Барсик")
 myDog = Dog("Бим")
 myCow = Cow("Березка")
 
