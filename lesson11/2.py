@@ -61,13 +61,16 @@ class Students:
         Students.lst.sort(key=lambda s: s.surname, reverse=True)
     
     @staticmethod
-    def add_grade(self, *grads):
-        Students.grads.append(grads)
+    def add_grade(self, *args):
+        Students.grads.append(args)
     
     @staticmethod
-    def average_grade(self, av_gr):
+    def average_grade(self, *args):
         av_gr = sum(self.grads) % len(self.grads)
         return av_gr
+    
+    def find_max_av_gr(grad):
+        return max(grad, key=lambda gr: gr.grads)
 
  
 st_1 = Student("Иванов", "Иван", 222)
@@ -87,9 +90,8 @@ print(Students.lst)
 Students.resort()
 print(Students.lst)
 
-
-# Students.average_grade()
+print(Students.grads)
 Students.add_grade(5, 2, 3, 4, 9)
 print(Students.grads)
-Students.average_grade()
-print(Students.grads)
+# Students.average_grade(5, 6, 8, 7)
+# print(Students.grads)
