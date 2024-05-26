@@ -26,20 +26,28 @@ class Student:
         self.surname = surname
         self.name = name
         self.group = group
-        
-    def __repr__(self):
-        return f"{self.name} {self.surname} ({self.group})"
-    
-    def add_grade():
-        pass
+        self.grads = []
 
-    def average_grade():
+    def __eq__(self, obj) -> bool:
+        self.av_gr == obj.av_gr
+    def __ne__(self, obj: object) -> bool:
         pass
- 
-        
+    def __lt__(self, obj: object) -> bool:
+        pass
+    def __gt__(self, obj: object) -> bool:
+        pass
+    def __le__(self, obj: object) -> bool:
+        pass
+    def __ge__(self, obj: object) -> bool:
+        pass    
+
+    def __repr__(self):
+        return f"{self.surname} {self.name} ({self.group})"
+    
 class Students:
     lst = []
-    
+    grads = []
+
     @staticmethod
     def add(student):
         Students.lst.append(student)
@@ -47,8 +55,20 @@ class Students:
     @staticmethod
     def sort():
         Students.lst.sort(key=lambda s: s.surname)
-        # Students.lst.sort(key=lambda s: (s.name, s.surname), reverse=True)
     
+    @staticmethod
+    def resort():
+        Students.lst.sort(key=lambda s: s.surname, reverse=True)
+    
+    @staticmethod
+    def add_grade(self, *grads):
+        Students.grads.append(grads)
+    
+    @staticmethod
+    def average_grade(self, av_gr):
+        av_gr = sum(self.grads) % len(self.grads)
+        return av_gr
+
  
 st_1 = Student("Иванов", "Иван", 222)
 st_2 = Student("Петров", "Петр", 218)
@@ -64,7 +84,12 @@ Students.add(st_5)
 print(Students.lst)
 Students.sort()
 print(Students.lst)
-Students.sort()
-print(sorted(Students.lst, reverse=True))
+Students.resort()
+print(Students.lst)
 
-# sorted(self.students, key=lambda x: sum(x.grades))
+
+# Students.average_grade()
+Students.add_grade(5, 2, 3, 4, 9)
+print(Students.grads)
+Students.average_grade()
+print(Students.grads)
