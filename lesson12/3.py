@@ -222,7 +222,8 @@ class Arena:
         else:
             ValueError("Количество воинов на арене должно быть больше 1")
 
-        
+    
+
 
 
 fireball = Spell('Fireball')         
@@ -236,13 +237,17 @@ hero5 = Dragon("Fafnir", 70, 40, 30, 120, -20, 20)
 
 # print(hero3.base_spell.name)
 # hero1.print_info()
-hero4.print_info()
-hero5.print_info()
+# hero4.print_info()
+# hero5.print_info()
 
 # print(hero4.mana)
-# print(hero3.mana)
+hero3.print_info()
+hero2.kick(hero3)
+hero3.print_info()
+hero2.kick(hero3)
+# hero3.print_info()
+# hero2.kick(hero3)
 
-# hero4.attack(hero3)
 # hero5.print_info()
 # hero4.kick(hero3)
 # hero3.print_info()
