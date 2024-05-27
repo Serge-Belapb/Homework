@@ -60,23 +60,23 @@ print(Books.lst)
 Books.sort()
 print(Books.lst)
     
-    # @property  # геттер
-    # def author(self):
-    #     return self.author
-    # @property  # геттер
-    # def title(self):
-    #     return self.title
-    # @property  # геттер
-    # def year(self):
-    #     return self.year
+@property  # геттер
+def author(self):
+        return self.author
+@property  
+def title(self):
+        return self.title
+@property 
+def year(self):
+        return self.year
     
-    # @author.setter
-    # def author(self, other):
-    #     if self.author is isinstance(self.other, str):
-    #         self.author = self.o
-    #     else:
-    #         ValueError ("Не тот тип данных")
-    #     return self.author
+@author.setter
+def author(self, other):
+    if self.author is isinstance(self.other, str):
+        self.author = self.o
+    else:
+        ValueError ("Не тот тип данных")
+    return self.author
     
     # @title.setter
     # def title(self, other):
