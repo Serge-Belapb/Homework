@@ -221,6 +221,12 @@ class Arena:
             return True
         else:
             ValueError("Количество воинов на арене должно быть больше 1")
+        for i in Arena.lst():
+            w1 = Arena.choose_warrior()
+            w2 = Arena.choose_warrior()
+            w1.kick(w2)
+            
+            
 
     
 
