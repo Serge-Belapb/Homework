@@ -32,6 +32,41 @@ class BookCard:
     def __repr__(self):
         return f"{self.__author} {self.__title} ({self.__year})"
 
+    @property  # геттер
+    def author(self):
+        return self.__author
+    @property  
+    def title(self):
+        return self.__title
+    @property 
+    def year(self):
+        return self.__year
+    
+    @author.setter
+    def author(self, other):
+        if self.author is isinstance(other, str):
+            self.author = other
+        else:
+            ValueError ("Не тот тип данных")
+        return self.author
+    
+    @title.setter
+    def title(self, other):
+        if self.title is isinstance(other, str):
+            self.title = other
+        else:
+            ValueError ("Не тот тип данных")
+        return self.title
+    
+    @year.setter
+    def year(self, ye):
+        if 0 < ye <= CURRENT_YEAR is isinstance(ye, int):
+            self.year = ye
+        else:
+            ValueError ("Не тот тип данных")
+
+
+
 
 class Books:
     lst = []
@@ -47,8 +82,8 @@ class Books:
 
 
 book1 = BookCard("Автор1", "Ноутбук", 2000)
-book2 = BookCard("Автор2", "Телефон", 1995),
-book3 = BookCard("Автор3", "Компьютер", 2019)
+book2 = BookCard("Автор2", "Телефон", 1995)
+book3 = BookCard("Автор3", "Компьютер", 1991)
 book1.print_info()
 
 print(Books.lst)
@@ -60,40 +95,6 @@ print(Books.lst)
 Books.sort()
 print(Books.lst)
     
-@property  # геттер
-def author(self):
-        return self.author
-@property  
-def title(self):
-        return self.title
-@property 
-def year(self):
-        return self.year
-    
-@author.setter
-def author(self, other):
-    if self.author is isinstance(self.other, str):
-        self.author = self.o
-    else:
-        ValueError ("Не тот тип данных")
-    return self.author
-    
-    # @title.setter
-    # def title(self, other):
-    #     if self.author is isinstance(self.other, str):
-    #         self.author = self.o
-    #     else:
-    #         ValueError ("Не тот тип данных")
-    #     return self.author
-
-
-    
-    # @year.setter
-    # def year(self, ye):
-    #     if self.__le__(ye) is isinstance(ye, int):
-    #         self.year = ye
-    #     else:
-    #         ValueError ("Не тот тип данных")
 
 
 
