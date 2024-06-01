@@ -38,6 +38,8 @@
 import re
 from datetime import datetime
 import random
+import string
+import secrets
 
 
 class User:
@@ -55,7 +57,7 @@ class User:
     
     @name.setter
     def checkname(self, value):
-        reg = "^[а-яА-ЯёЁ]$"
+        reg = "^[а-яА-ЯёЁ]+$"
         if not re.match(reg, value):
             raise ValueError("Имя должно содержать только буквы русского алфавита")
         self._name = value
@@ -102,25 +104,26 @@ class User:
     def check_subscr(self, dt):
         return datetime(*dt).date
     
-   
     def change_pass(self, *password):
-        if not password:
-            chars = 'abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
-            chars1 = 'abcdefghijklnopqrstuvwxyz'
-            chars2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-            chars3 = '1234567890'
-            length = 5
-            password =''
-            for i in range(length-3):
-                    password += random.choice(chars)
-            password += random.choice(chars1)
-            password += random.choice(chars2)
-            password += random.choice(chars3)
-        print(password)
-        return self.password
+        char = string.ascii_letters + string.digits
+        while True:
+            password = ''.join(secrets.choice(char) for i in range(5))
+            # password = ''.join(random.choice(char) for i in range(5))
+            if (any(c.islower() for c in password)
+                and any(c.isupper() for c in password)
+                and sum(c.isdigit() for c in password) >= 3):
+                break
+            self.password = password
+            print(f"Новый пароль пользователя {self.name} - {self.password}")
+            return password
 
-    def get_info():
-        pass     
+    def get_info(self):
+        name = self.name
+        login = self.login
+        password = self.password
+        if name in is_blocked():
+
+        return name, login, password
 
 # print(d_txt)    
 dat = (2024, 1, 12)
@@ -129,10 +132,10 @@ dat = (2024, 1, 12)
 # subscription_date = date.today().year
 # subscription_mode = 1  # free  paid
     
-user1 = User('дмдшрм', 'knk_v', 'lbP7')
+user1 = User('Иванов', 'Ivan_v', 'lbP17')
 
 print(user1._name, user1.login)
 # print(check_subscr(dat))
-user1.change_pass('GGl8')
+print(user1.get_info())
 user1.change_pass()
-print(user1.password)
+print(user1.get_info())
