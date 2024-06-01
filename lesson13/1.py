@@ -41,12 +41,11 @@ import random
 
 
 class User:
-    def __init__(self, name, login, password, is_blocked):
+    def __init__(self, name, login, password):
         self._name = name
         self.login = login
         self.password = password
-        self.is_blocked = True
-
+        
     def __repr__(self):
         return f"{self.name} {self.login} ({self.password})"    
 
@@ -89,14 +88,14 @@ class User:
     
     is_blocked = []
 
-    def bloc(func):
-        @wrapper(func)
-	    def decorator(mes):
-		    if mes not in is_blocked:
-			    return func(mes)
-            else:
-                is_blocked.append(mes)
-	    return decorator
+    # def bloc(func):
+    #     @wrapper(func)
+	#     def decorator(mes):
+	# 	    if mes not in is_blocked:
+	# 		    return func(mes)
+    #         else:
+    #             is_blocked.append(mes)
+	#     return decorator
         
        
 
@@ -120,7 +119,8 @@ class User:
         print(password)
         return self.password
 
-    def get_info()
+    def get_info():
+        pass     
 
 # print(d_txt)    
 dat = (2024, 1, 12)
