@@ -36,7 +36,7 @@
 """
 
 import re
-from datetime import datetime
+import datetime
 import random
 import string
 import secrets
@@ -101,8 +101,11 @@ class User:
         
        
 
-    def check_subscr(self, dt):
-        return datetime(*dt).date
+    def check_subscr(self, *dt):
+        new_date = datetime.datetime.today() + datetime.timedelta(days=30)
+        print(new_date)
+        return new_date
+    
     
     def change_pass(self, *password):
         char = string.ascii_letters + string.digits
@@ -121,10 +124,12 @@ class User:
         name = self.name
         login = self.login
         password = self.password
-        if name in is_blocked():
-
         return name, login, password
 
+
+class Users:
+    def __init__(self) -> None:
+        pass
 # print(d_txt)    
 dat = (2024, 1, 12)
  
@@ -139,3 +144,4 @@ print(user1._name, user1.login)
 print(user1.get_info())
 user1.change_pass()
 print(user1.get_info())
+user1.check_subscr()
