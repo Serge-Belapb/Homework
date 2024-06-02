@@ -40,14 +40,18 @@ import datetime
 import random
 import string
 import secrets
+import calendar
+from datetime import date, timedelta
 
 
 class User:
-    def __init__(self, name, login, password):
+    def __init__(self, name, login, password, *subscription_date, **subscription_mode):
         self._name = name
         self.login = login
         self.password = password
-        
+        self.is_blocked = []
+        self.subscription_date = subscription_date
+                
     def __repr__(self):
         return f"{self.name} {self.login} ({self.password})"    
 
@@ -85,24 +89,17 @@ class User:
         self._password = value
 
 
-    # def is_blocked():
-    #     pass
-    
-    is_blocked = []
-
-    # def bloc(func):
-    #     @wrapper(func)
-	#     def decorator(mes):
-	# 	    if mes not in is_blocked:
-	# 		    return func(mes)
-    #         else:
-    #             is_blocked.append(mes)
-	#     return decorator
-        
-       
+    def bloc(self, name):
+        self.is_blocked.append(name)
+	
 
     def check_subscr(self, *dt):
-        new_date = datetime.datetime.today() + datetime.timedelta(days=30)
+        today = date.today()
+        days = calendar.monthrange(today.year, today.month)[1]
+        new_date = today + timedelta(days=days)
+        
+        
+        # new_date = datetime.datetime.today() + datetime.timedelta(days=30)
         print(new_date)
         return new_date
     
@@ -124,12 +121,22 @@ class User:
         name = self.name
         login = self.login
         password = self.password
+
         return name, login, password
+
+    def save(self):
+        pass
+    
+
 
 
 class Users:
     def __init__(self) -> None:
         pass
+
+
+
+
 # print(d_txt)    
 dat = (2024, 1, 12)
  
