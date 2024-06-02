@@ -97,9 +97,7 @@ class User:
         today = date.today()
         days = calendar.monthrange(today.year, today.month)[1]
         new_date = today + timedelta(days=days)
-        
-        
-        # new_date = datetime.datetime.today() + datetime.timedelta(days=30)
+                
         print(new_date)
         return new_date
     
@@ -126,7 +124,7 @@ class User:
 
     def save(self):
         pass
-    
+
 
 
 
