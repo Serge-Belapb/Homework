@@ -158,6 +158,8 @@ user2 = User('Петров', 'Petr_v', 'EDgt3', dat)
 print(user1._name, user1.login)
 # print(check_subscr(dat))
 print(user1.get_info())
+print(user2.get_info())
+
 user1.change_pass()
 print(user1.get_info())
 user2.check_subscr()
