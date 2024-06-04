@@ -42,6 +42,7 @@ import string
 import secrets
 import calendar
 from datetime import date, timedelta
+from datetime import datetime
 
 
 class User:
@@ -91,10 +92,19 @@ class User:
 
     def bloc(self, name):
         self.is_blocked.append(name)
+        with open("block.txt", "w") as file:
+            print(*self.is_blocked, file=file)
 	
 
-    def check_subscr(self, *dt):
+    def check_subscr(self, *subscription_date):
+        print(subscription_date)
+        # date1 = datetime.strptime(subscription_date, '%Y-%m-%d')
         today = date.today()
+        print(today)
+        # print(date1)
+        
+        # if subscription_date < today:
+        #     user2.bloc(self.name)
         days = calendar.monthrange(today.year, today.month)[1]
         new_date = today + timedelta(days=days)
                 
@@ -136,17 +146,18 @@ class Users:
 
 
 # print(d_txt)    
-dat = (2024, 1, 12)
+dat = '2024-1-1'
  
 # is_blocked = []
 # subscription_date = date.today().year
 # subscription_mode = 1  # free  paid
     
 user1 = User('Иванов', 'Ivan_v', 'lbP17')
+user2 = User('Петров', 'Petr_v', 'EDgt3', dat)
 
 print(user1._name, user1.login)
 # print(check_subscr(dat))
 print(user1.get_info())
 user1.change_pass()
 print(user1.get_info())
-user1.check_subscr()
+user2.check_subscr()
