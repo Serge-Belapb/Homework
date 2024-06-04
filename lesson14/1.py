@@ -4,7 +4,7 @@ import sqlite3
 con = sqlite3.connect('BaseUsers.db')
 cur = con.cursor()
 
-newTable = """CREATE TABLE IF NOT EXISTS users2(
+newTable = """CREATE TABLE IF NOT EXISTS users(
                userid INTEGER PRIMARY KEY AUTOINCREMENT,
                name TEXT,
                login TEXT,
