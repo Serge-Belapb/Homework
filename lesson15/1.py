@@ -11,7 +11,8 @@ users = db.Table('Users', metadata,
             db.Column('user_name', db.Text), 
             db.Column('user_login', db.Text), 
             db.Column('user_password', db.Text), 
-            db.Column('user_password', db.Text), 
-            db.Column('user_password', db.Text), 
+            db.Column('user_is_blocked', db.Boolean), 
+            db.Column('subscription_date', db.Text), 
+            db.Column('subscription_mode', db.Text), 
                 
 )
