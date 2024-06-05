@@ -29,7 +29,7 @@ insertion_query = users.insert().values([
 
 # connection.execute(insertion_query)
 
-select_all_query = db.select([users])    # результат запроса
+select_all_query = db.select([users])    
 select_all_result = connection.execute(select_all_query)   # выбираем все значения из таблицы users
 
 print(select_all_result.fetchall())
