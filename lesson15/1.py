@@ -12,7 +12,7 @@ users = db.Table('users', metadata,
             db.Column('login', db.Text), 
             db.Column('password', db.Text), 
             db.Column('is_blocked', db.Boolean), 
-            db.Column('subscription_date', db.Text), 
+            db.Column('subscription_date', db.Date), 
             db.Column('subscription_mode', db.Text)
 )
 
