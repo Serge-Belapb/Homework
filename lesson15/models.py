@@ -19,31 +19,9 @@ class User(Base):
     subscription_date = Column(DateTime, server_default=func.now())      
     updated_sub_date = Column(DateTime, server_default=func.now(), onupdate=func.now())
     subscription_mode = Column(String(10))
-    
-
-class Quiz(Base):
-    __tablename__ = 'quiz'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(100))
-    user_id = Column(Integer, ForeignKey('user.id'))
-    created_at = Column(DateTime, server_default=func.now())
-    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())
 
 
-quiz_question = Table(
-            'quiz_question'
-)
 
-
-class Question(Base):
-    __tablename__ = 'question' 
-
-    id = Column(Integer(), primary_key=True)
-    question = Column(String(250), nullable=False)
-    answer = Column(String(100), nullable=False)
-    wrong1 = Column(String(100), nullable=False)
-    wrong2 = Column(DateTime, server_default=func.now())
-    wrong3 = Column(DateTime, server_default=func.now(), onupdate=func.now())   
 
 
 
