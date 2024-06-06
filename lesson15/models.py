@@ -15,7 +15,7 @@ class User(Base):
     name = Column(String(25))
     login = Column(String(20))
     password = Column(String(25))
-    is_blocked = Column(String(7), Boolean) 
+    is_blocked = Column(Boolean, default=False) 
     subscription_date = Column(DateTime, server_default=func.now())      
     updated_sub_date = Column(DateTime, server_default=func.now(), onupdate=func.now())
     subscription_mode = Column(String(10))
