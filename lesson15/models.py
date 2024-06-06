@@ -17,11 +17,9 @@ class User(Base):
     password = Column(String(25))
     is_blocked = Column(String(7), Boolean) 
     subscription_date = Column(DateTime, server_default=func.now())      
+    updated_sub_date = Column(DateTime, server_default=func.now(), onupdate=func.now())
     subscription_mode = Column(String(10))
-    quizes = relationship('Quiz', backref='user')
-    created_at = Column()
-    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())
-
+    
 
 class Quiz(Base):
     __tablename__ = 'quiz'
