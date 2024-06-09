@@ -1,8 +1,14 @@
+from sqlalchemy import create_engine
 from sqlalchemy import (Column, ForeignKey, Table, 
                         Integer, String, Text, Boolean, Date, DateTime)
 
 from sqlalchemy.orm import relationship, DeclarativeBase
 from sqlalchemy.sql import func
+
+sqlite_database = "sqlite:///users.db"
+
+# создаем движок SqlAlchemy
+engine = create_engine(sqlite_database)
 
 class Base(DeclarativeBase):
     ...
@@ -20,9 +26,10 @@ class User(Base):
     updated_sub_date = Column(DateTime, server_default=func.now(), onupdate=func.now())
     subscription_mode = Column(String(10))
 
+# создаем таблицы
+Base.metadata.create_all(bind=engine)
 
-
-
+print("База данных и таблица созданы")
 
 
 

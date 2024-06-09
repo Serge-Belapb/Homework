@@ -1,6 +1,6 @@
 import sqlalchemy as db
 
-engine = db.create_engine('sqlite:///users_sqlalchemy.db')
+engine = db.create_engine('sqlite:///users_sqlalchemy.db', echo=True)
 
 connection = engine.connect()  # подсоединяемся к нашей БД
 
@@ -19,17 +19,17 @@ users = db.Table('users', metadata,
 metadata.create_all(engine)   # создаем таблицу
 
 insertion_query = users.insert().values([
-    {"name":"Иванов", "login":"Ina_nov", "password":"Ghjw2", "is_blocked":False, 
-        "subscription_date":"2024-5-20", "subscription_mode":"free"},
-    {"name":"Петров", "login":"Pet_ov", "password":"5Fgbb", "is_blocked":False, 
-        "subscription_date":"2024-4-20", "subscription_mode":"free"},
-    {"name":"Сидоров", "login":"Sid_rov", "password":"nNb3i", "is_blocked":False, 
-        "subscription_date":"2024-5-1", "subscription_mode":"free"}
+    {"name":"Иванов", "login":"Ina_nov", "password":"Ghjw2", "is_blocked":False}, 
+        # "subscription_date":"2024-5-20", "subscription_mode":"free"},
+    {"name":"Петров", "login":"Pet_ov", "password":"5Fgbb", "is_blocked":False}, 
+        # "subscription_date":"2024-4-20", "subscription_mode":"free"},
+    {"name":"Сидоров", "login":"Sid_rov", "password":"nNb3i", "is_blocked":False} 
+        # "subscription_date":"2024-5-1", "subscription_mode":"free"}
 ])
 
 # connection.execute(insertion_query)
 
-select_all_query = db.select([users])    
+select_all_query = db.select([insertion_query])    
 select_all_result = connection.execute(select_all_query)   # выбираем все значения из таблицы users
 
 print(select_all_result.fetchall())
