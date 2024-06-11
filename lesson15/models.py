@@ -26,10 +26,22 @@ class User(Base):
     updated_sub_date = Column(DateTime, server_default=func.now(), onupdate=func.now())
     subscription_mode = Column(String(10))
 
+
+class Service(Base):
+    __tablename__ = 'services'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(25))
+    type_of = Column(Boolean, default=False)
+    price = Column(Integer)
+    period = Column(Date)
+
+
 # создаем таблицы
 Base.metadata.create_all(bind=engine)
 
 print("База данных и таблица созданы")
+
 
 
 
